@@ -52,7 +52,7 @@ const data = [
     },
     {
         image: kaftan2,
-        title: 'Men senator',
+        title: 'Men Kaftan',
         vendor: 'Lyta Collections',
         rating: 4.6,
         price: 120

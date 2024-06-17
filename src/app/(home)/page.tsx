@@ -1,9 +1,5 @@
-"use client";
 import Image from "next/image";
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import hanger from "../../../public/hangers.png";
-import hanger2 from "../../../public/hanger2.png";
 import asset1 from "../../../public/asset1.svg";
 import trousers from "../../../public/asset2.svg";
 import office_wears from "../../../public/asset3.svg";
@@ -18,13 +14,9 @@ import Slider from "../components/Carousel";
 import ReviewScroll from "../components/ReviewScroll";
 import CategoryScroll from "../components/CategoryScroll";
 import Link from "next/link";
-import Modal from "../components/Modal";
-import Form from "../components/Form";
+import ModalContent from "../components/ModalContent";
 
 export default function Home() {
-  const searchParams = useSearchParams();
-  const modalOpen = searchParams.has("join");
-
   const collections = data.map((collection: CardProps) => {
     return <Card data={collection} key={collection.title} />;
   });
@@ -34,9 +26,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col  pt-16">
-      <Modal isOpen={modalOpen}>
-        <Form />
-      </Modal>
+      <ModalContent />
+
       <section className=" md:px-28 relative">
         <Slider />
         <div className="flex w-[139px] h-[40px] md:w-[260px] md:h-[59px] lg:max-w-[360px] lg:h-[89px] justify-center items-center absolute left-0 md:left-28 md:top-3 -top-12  bg-black rounded-[50px]">
@@ -46,8 +37,7 @@ export default function Home() {
             className="w-full h-full rounded-[50px] object-cover "
           />
         </div>
-        {/* <div className="shd grid place-content-center w-[139px] h-[40px] md:w-[260px] md:h-[59px] lg:max-w-[360px] lg:h-[89px] justify-center items-center  absolute right-0 md:right-28 -top-12 md:top-3 bg-black rounded-[50px]"></div>
-         */}
+
         <Link
           href="/?join=join-waitlist"
           className="bg-[#fda600] grid place-content-center w-[139px] h-[40px] md:w-[260px] md:h-[59px] lg:max-w-[360px] lg:h-[89px] rounded-[50px] absolute right-0 md:right-28 -top-12 md:top-3 text-center font-satoshi font-bold  text-white md:text-[22px] md:leading-[30px] hover:text-black"
@@ -68,8 +58,6 @@ export default function Home() {
             <Image src={asset1} alt="" />
           </div>
         </div>
-
-        {/* border border-red-600 */}
 
         <div className="hidden md:flex justify-between items-center absolute right-28 top-[30%]">
           <div className="bg-white  w-[306px] h-[333px] rounded-[20px] flex flex-col justify-evenly px-8 relative">
