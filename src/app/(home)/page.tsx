@@ -15,6 +15,7 @@ import ReviewScroll from "../components/ReviewScroll";
 import CategoryScroll from "../components/CategoryScroll";
 import Link from "next/link";
 import ModalContent from "../components/ModalContent";
+import { Suspense } from "react";
 
 export default function Home() {
   const collections = data.map((collection: CardProps) => {
@@ -26,7 +27,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col  pt-16">
-      <ModalContent />
+      <Suspense>
+        <ModalContent />
+      </Suspense>
 
       <section className=" md:px-28 relative">
         <Slider />
@@ -113,21 +116,21 @@ export default function Home() {
           </h3>
         </div>
         <div className="px-5 md:px-8 lg:px-28">
-          <ul className="flex items-center  justify-between md:justify-start gap-2 md:gap-6 font-satoshi text-white md:text-[22px] text-[8.77px] leading-[11.83px] md:leading-[30px]">
+          <ul className="flex items-center justify-between md:justify-start gap-1 md:gap-6 font-satoshi text-white md:text-[22px] text-[8.77px] leading-[11.83px] md:leading-[30px]">
             <li className="py-[9px] px-[13.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px]  bg-[#fda600]">
               Street wear
             </li>
 
-            <li className="py-[9px] px-[13.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px]  bg-[#fda600]">
+            <li className="py-[9px] px-[10px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px]  bg-[#fda600]">
               Vintage clothing
             </li>
-            <li className="py-[9px] px-[13.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
+            <li className="py-[9px] px-[10.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
               Senator
             </li>
-            <li className="py-[9px] px-[13.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
+            <li className="py-[9px] px-[10.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
               Minimalist
             </li>
-            <li className="py-[9px] px-[13.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
+            <li className="py-[9px] px-[10.95px] md:py-[15px] md:px-[35px] rounded-[15px] md:rounded-[50px] bg-[#fda600]">
               {" "}
               Casual
             </li>
@@ -200,16 +203,16 @@ export default function Home() {
               All
             </li>
 
-            <li className="md:py-[15px] md:px-[35px] py-[9px]  px-[14.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
+            <li className="md:py-[15px] md:px-[35px] py-[9px]  px-[13.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
               Vintage clothing
             </li>
-            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[14.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
+            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[12.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
               Senator
             </li>
-            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[14.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
+            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[12.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
               Minimalist
             </li>
-            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[14.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
+            <li className="md:py-[15px] md:px-[35px] py-[9px] px-[12.27px] rounded-[21.81px] md:rounded-[50px] text-[#fda600] border border-[#fda600] bg-transparent cursor-pointer transition-colors hover:bg-[#fda600] hover:text-white">
               {" "}
               Casual
             </li>

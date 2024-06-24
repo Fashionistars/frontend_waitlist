@@ -43,7 +43,7 @@ const schema = z.object({
 })
 export const createWaitlist = async (prev:any, formdata: FormData) => {
     const data = Object.fromEntries(formdata.entries())
-   
+   console.log(data)
     const validatedData = schema.safeParse(data)
     if (!validatedData.success) {
     
@@ -51,14 +51,14 @@ export const createWaitlist = async (prev:any, formdata: FormData) => {
             errors: validatedData.error.flatten().fieldErrors,
         };
     }
-    
+    // //fashionistar-waitlist.onrender.com/waitlist/waitlist/create/
     try {
-        const res = await axios.post("https://fashionistar-waitlist.onrender.com/waitlist/waitlist/create/", formdata, {
+        const res = await axios.post("https://fashionistar-waitlist.onrender.com/waitlist/create/", formdata, {
             headers: {
             'Content-Type': 'multipart/formdata'
         }}); 
         
-        
+        console.log(res)
         
     
     } catch (error:any) {

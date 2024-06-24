@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { createWaitlist } from "../action";
 import { useFormState } from "react-dom";
@@ -21,6 +21,10 @@ const Form = () => {
     },
   };
   const [state, formAction] = useFormState(createWaitlist, initialState);
+  // const handleSubmit = (e: FormEvent) => {
+  //   e.preventDefault();
+  //   console.log("Error");
+  // };
 
   return (
     <div

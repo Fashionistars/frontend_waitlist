@@ -17,7 +17,7 @@ const Navbar = () => {
         Home
       </Link>
       <Link
-        href="/about-us"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/about-us"
             ? "text-white font-bold"
@@ -27,7 +27,7 @@ const Navbar = () => {
         About
       </Link>
       <Link
-        href="/categories"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/categories"
             ? "text-white font-bold"
@@ -37,7 +37,7 @@ const Navbar = () => {
         Categories
       </Link>
       <Link
-        href="/vendor"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/vendor"
             ? "text-white font-bold"
@@ -47,7 +47,7 @@ const Navbar = () => {
         Vendors
       </Link>
       <Link
-        href="/shops"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/shops"
             ? "text-white font-bold"
@@ -57,7 +57,7 @@ const Navbar = () => {
         Shops
       </Link>
       <Link
-        href="/collections"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/collections"
             ? "text-white font-bold"
@@ -67,7 +67,7 @@ const Navbar = () => {
         Collections
       </Link>
       <Link
-        href="/testimonails"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/testimonails"
             ? "text-white font-bold"
@@ -77,7 +77,7 @@ const Navbar = () => {
         Testimonials
       </Link>
       <Link
-        href="/contact-us"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/contact-us"
             ? "text-white font-bold"
@@ -87,7 +87,7 @@ const Navbar = () => {
         Contact Us
       </Link>
       <Link
-        href="/shops"
+        href="/"
         className={`text-lg leading-6  hover:text-white ${
           pathname === "/blog"
             ? "text-white font-bold"
