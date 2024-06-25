@@ -39,6 +39,34 @@ const schema = z.object({
         ),
       { message: "Image must be a JPEG, PNG, or GIF" }
     ),
+    image_2: z
+    .instanceof(File, {
+      message: "Image is required and should be a file",
+    })
+    .refine((file) => file.size <= 10 * 1024 * 1024, {
+      message: "Image must be less than 5MB",
+    }) // 5MB limit
+    .refine(
+      (file) =>
+        ["image/jpeg", "image/jpg", "image/png", "image/gif"].includes(
+          file.type
+        ),
+      { message: "Image must be a JPEG, PNG, or GIF" }
+    ),
+    image_3: z
+    .instanceof(File, {
+      message: "Image is required and should be a file",
+    })
+    .refine((file) => file.size <= 10 * 1024 * 1024, {
+      message: "Image must be less than 5MB",
+    }) // 5MB limit
+    .refine(
+      (file) =>
+        ["image/jpeg", "image/jpg", "image/png", "image/gif"].includes(
+          file.type
+        ),
+      { message: "Image must be a JPEG, PNG, or GIF" }
+    ),
 
 })
 export const createWaitlist = async (prev:any, formdata: FormData) => {

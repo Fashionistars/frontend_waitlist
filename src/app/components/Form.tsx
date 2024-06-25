@@ -52,6 +52,7 @@ const Form = () => {
           <circle cx="25" cy="25" r="24.5" stroke="#D9D9D9" />
         </svg>
       </button>
+
       <div className="space-y-5">
         <h2 className="font-satoshi  font-medium text-center text-2xl lg:text-5xl lg:leading-[65px] text-black">
           Join the waitlist
@@ -159,7 +160,7 @@ const Form = () => {
         </div>
         {!state?.errors &&
           toast.success(
-            <p className="text-2xl font-bon_foyage text-[#fda600] w-full">
+            <p className="text-lg font-bon_foyage text-[#282828] w-full">
               Successfully joined the waitlist
             </p>,
             { duration: 3000 }

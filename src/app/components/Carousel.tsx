@@ -4,6 +4,12 @@ import couple from "../../../public/couple_assets.svg";
 import man from "../../../public/asset4.svg";
 import man2 from "../../../public/man2_asset.svg";
 import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
@@ -48,32 +54,31 @@ const Slider = () => {
   }
   const sliders = slides.map((slide, index) => {
     return (
-      <div className="w-full flex-shrink-0" key={index}>
-        <div className="flex justify-center bg-[#EDE7D9]  md:bg-transparent">
-          <p className="font-bon_foyage text-5xl px-6 py-2 leading-[47.62px] md:text-8xl md:leading-[95px] text-center text-black  md:w-1/2 md:px-10 ">
+      <CarouselItem key={index}>
+        <div className="w-full flex-col flex-shrink-0">
+          <p className="font-bon_foyage mx-auto bg-[#EDE7D9]  md:bg-transparent text-5xl px-6 py-2 leading-[47.62px] md:text-8xl md:leading-[95px] text-center text-black  md:w-1/2 md:px-8 ">
             {highlightText(slide.text, slide.highlight)}
           </p>
-        </div>
-        <div className="relative flex justify-center">
-          <div className="z-10 absolute -top-12">
+
+          <div className="-mt-12 h-[500px] w-full flex justify-center">
             <Image src={slide.image} alt="" className="w-full h-full" />
           </div>
         </div>
-      </div>
+      </CarouselItem>
     );
   });
 
   return (
-    <div className="overflow-hidden relative mt-5 ">
-      <div
-        className={`flex transition ease-out duration-400 h-screen`}
-        style={{
-          transform: `translateX(-${current * 100}%)`,
-        }}
-      >
-        {sliders}
-      </div>
-    </div>
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 5000,
+        }),
+      ]}
+      opts={{ align: "start", loop: true }}
+    >
+      <CarouselContent>{sliders}</CarouselContent>
+    </Carousel>
   );
 };
 export default Slider;
@@ -119,3 +124,14 @@ export default Slider;
         </div>
       </div> */
 }
+
+// <div className="overflow-hidden relative mt-5 ">
+//   <div
+//     className={`flex transition ease-out duration-400 h-screen`}
+//     style={{
+//       transform: `translateX(-${current * 100}%)`,
+//     }}
+//   >
+//     {sliders}
+//   </div>
+// </div>
