@@ -29,7 +29,7 @@ const Form = () => {
   return (
     <div
       style={{ boxShadow: "12px 12px 0px 0px #FDA600" }}
-      className="relative rounded-[30px] border-2 m-auto  py-14 px-2 lg:p-16 border-[#fda600] w-[90%] md:w-[99%] h-full bg-white"
+      className="relative rounded-[30px] border-2 m-auto  py-14 px-2 lg:p-16 border-[#fda600] w-[90%] md:w-[80%] h-full bg-white"
     >
       <button
         type="button"
