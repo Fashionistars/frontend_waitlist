@@ -21,10 +21,6 @@ const Form = () => {
     },
   };
   const [state, formAction] = useFormState(createWaitlist, initialState);
-  // const handleSubmit = (e: FormEvent) => {
-  //   e.preventDefault();
-  //   console.log("Error");
-  // };
 
   return (
     <div
@@ -158,13 +154,13 @@ const Form = () => {
             <ImageInput states={state} />
           </div>
         </div>
-        {!state?.errors &&
+        {/* {!state?.errors ?
           toast.success(
             <p className="text-lg font-bon_foyage text-[#282828] w-full">
               Successfully joined the waitlist
             </p>,
             { duration: 3000 }
-          )}
+          ): ""} */}
         <Button />
       </form>
     </div>
