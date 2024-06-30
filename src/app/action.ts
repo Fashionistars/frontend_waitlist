@@ -89,7 +89,8 @@ export const createWaitlist = async (prev:any, formdata: FormData) => {
         console.log(res)
         
     
-    } catch (error:any) {
+    } catch (error: any) {
+      console.log(error)
         
         return {
             errors: error?.response?.data
