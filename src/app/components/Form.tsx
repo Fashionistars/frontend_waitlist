@@ -6,7 +6,7 @@ import { useFormState } from "react-dom";
 import OnlyDigitInput from "../components/NumberInput";
 import Button from "./Button";
 import ImageInput from "../components/ImageInput";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const Form = () => {
   const router = useRouter();
@@ -21,7 +21,7 @@ const Form = () => {
     },
   };
   const [state, formAction] = useFormState(createWaitlist, initialState);
-
+  console.log(state);
   return (
     <div
       style={{ boxShadow: "12px 12px 0px 0px #FDA600" }}

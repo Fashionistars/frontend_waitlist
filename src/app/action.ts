@@ -79,6 +79,7 @@ const schema = z.object({
       { message: "Image must be a JPEG, PNG, or GIF" }
     ),
 });
+
 export const createWaitlist = async (prev: any, formdata: FormData) => {
   const data = Object.fromEntries(formdata.entries());
   console.log(data);
@@ -88,21 +89,21 @@ export const createWaitlist = async (prev: any, formdata: FormData) => {
       errors: validatedData.error.flatten().fieldErrors,
     };
   }
-  // //fashionistar-waitlist.onrender.com/waitlist/waitlist/create/
+
   try {
     const res = await axios.post(
       "https://fashionistar-waitlist.onrender.com/waitlist/create/",
       formdata,
       {
         headers: {
-          "Content-Type": "multipart/formdata",
+          "Content-Type": "multipart/form-data",
         },
       }
     );
-
     console.log(res);
   } catch (error: any) {
-    console.log(error);
+    console.error("Error submitting form:", error);
+    console.error("Error response data:", error.response?.data);
     return {
       errors: error?.response?.data,
     };
